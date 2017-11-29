@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp3_tommy.FXMLDocumentController">
+   <children>
+      <ToolBar prefHeight="36.0" prefWidth="875.0">
+        <items>
+          <Button fx:id="btnTextSmaller" focusTraversable="false" mnemonicParsing="false" onAction="#btnTextSizeChanger" text="A+" textAlignment="CENTER" />
+            <Button fx:id="btnTextBigger" focusTraversable="false" mnemonicParsing="false" onAction="#btnTextSizeChanger" text="A-" textAlignment="CENTER" />
+            <Separator prefHeight="25.0" prefWidth="13.0" />
+            <ToggleButton fx:id="btnColorBlack" mnemonicParsing="false" onAction="#tgbColorChanger">
+               <graphic>
+                  <Circle radius="9.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </graphic>
+               <toggleGroup>
+                  <ToggleGroup fx:id="colorButtons" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="btnColorRed" mnemonicParsing="false" onAction="#tgbColorChanger" textFill="RED" toggleGroup="$colorButtons">
+               <graphic>
+                  <Circle fill="RED" radius="9.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="btnColorGreen" mnemonicParsing="false" onAction="#tgbColorChanger" textFill="GREEN" toggleGroup="$colorButtons">
+               <graphic>
+                  <Circle fill="GREEN" radius="9.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="Blue" mnemonicParsing="false" onAction="#tgbColorChanger" textFill="BLUE" toggleGroup="$colorButtons">
+               <graphic>
+                  <Circle fill="BLUE" radius="9.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="btnColorPurple" mnemonicParsing="false" onAction="#tgbColorChanger" textFill="PURPLE" toggleGroup="$colorButtons">
+               <graphic>
+                  <Circle fill="PURPLE" radius="9.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="btnColorGrey" mnemonicParsing="false" onAction="#tgbColorChanger" selected="true" textFill="GREY" toggleGroup="$colorButtons">
+               <graphic>
+                  <Circle fill="GREY" radius="9.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="btnColorOrange" mnemonicParsing="false" onAction="#tgbColorChanger" textFill="#e15b2b" toggleGroup="$colorButtons">
+               <graphic>
+                  <Circle fill="#e15b2b" radius="9.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="btnColorYellow" mnemonicParsing="false" onAction="#tgbColorChanger" textFill="ORANGE" toggleGroup="$colorButtons">
+               <graphic>
+                  <Circle fill="ORANGE" radius="9.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <Separator prefHeight="25.0" prefWidth="13.0" />
+            <ColorPicker fx:id="cmbTextColor" onAction="#copColorChanger" />
+            <Separator prefHeight="25.0" prefWidth="13.0" />
+            <Button mnemonicParsing="false" text="Mots fin(s) -&gt; MAJ" />
+            <Button mnemonicParsing="false" onAction="#btnQuit" text="Inverse Texte" />
+        </items>
+      </ToolBar>
+      <Label layoutX="14.0" layoutY="36.0" text="Texte" />
+      <TextArea fx:id="txaText" layoutX="14.0" layoutY="53.0" prefHeight="383.0" prefWidth="406.0" />
+      <TextArea fx:id="txaPosNum" editable="false" layoutX="430.0" layoutY="53.0" prefHeight="383.0" prefWidth="148.0" />
+      <Label layoutX="430.0" layoutY="36.0" text="Nombres positifs" />
+      <TextArea fx:id="txaWords" editable="false" layoutX="587.0" layoutY="53.0" prefHeight="383.0" prefWidth="148.0" />
+      <Label layoutX="587.0" layoutY="36.0" text="Mots" />
+      <Button layoutX="745.0" layoutY="436.0" mnemonicParsing="false" onAction="#btnQuit" prefHeight="25.0" prefWidth="160.0" text="Quitter" />
+      <ComboBox fx:id="cmbTextLoader" layoutX="35.0" layoutY="436.0" onAction="#cmbTextLoad" prefHeight="25.0" prefWidth="383.0" />
+      <Button fx:id="btnTextClear" layoutX="14.0" layoutY="436.0" mnemonicParsing="false" onAction="#btnTextClearAction" text="-" />
+      <CheckBox fx:id="chbConfirm" layoutX="746.0" layoutY="410.0" mnemonicParsing="false" text="Confirmation à quiter" />
+      <Label layoutX="746.0" layoutY="53.0" text="Tri des nombres" />
+      <RadioButton layoutX="746.0" layoutY="70.0" mnemonicParsing="false" text="Ascendant" />
+      <RadioButton layoutX="746.0" layoutY="87.0" mnemonicParsing="false" text="Descendant" />
+      <Button layoutX="746.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Trier Nombres" />
+      <Separator layoutX="746.0" layoutY="144.0" prefHeight="9.0" prefWidth="135.0" />
+      <Label layoutX="748.0" layoutY="164.0" text="Statistiques des mots" />
+      <Label layoutX="748.0" layoutY="191.0" text="Minuscules" />
+      <Label layoutX="748.0" layoutY="223.0" text="Majuscules" />
+      <ComboBox fx:id="cmbLetters" layoutX="745.0" layoutY="252.0" prefHeight="25.0" prefWidth="66.0" />
+      <TextField alignment="CENTER_RIGHT" editable="false" layoutX="828.0" layoutY="187.0" prefHeight="25.0" prefWidth="66.0" />
+      <TextField alignment="CENTER_RIGHT" editable="false" layoutX="828.0" layoutY="219.0" prefHeight="25.0" prefWidth="66.0" />
+      <TextField alignment="CENTER_RIGHT" editable="false" layoutX="828.0" layoutY="252.0" prefHeight="25.0" prefWidth="66.0" />
+      <Button layoutX="430.0" layoutY="436.0" mnemonicParsing="false" onAction="#btnExtractPosNumAction" text="+" />
+      <Button layoutX="455.0" layoutY="436.0" mnemonicParsing="false" text="-" />
+      <Button layoutX="614.0" layoutY="436.0" mnemonicParsing="false" text="-" />
+      <Button layoutX="588.0" layoutY="436.0" mnemonicParsing="false" text="+" />
+      <TextField layoutX="476.0" layoutY="437.0" prefHeight="25.0" prefWidth="101.0" />
+      <TextField layoutX="635.0" layoutY="436.0" prefHeight="25.0" prefWidth="101.0" />
+   </children>
+</AnchorPane>
